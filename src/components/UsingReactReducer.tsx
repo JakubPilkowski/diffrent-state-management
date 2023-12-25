@@ -116,7 +116,10 @@ const UsingReactReducer: FC = () => {
           onPause={handleDispatch({ type: "Pause" })}
           muted
         >
-          <source src="../public/video.mp4" type="video/mp4" />
+          <source
+            src="https://static.vecteezy.com/system/resources/previews/023/960/299/mp4/hello-neon-light-title-animation-on-wall-great-for-greetings-opening-bumper-cinema-digital-media-publishing-film-short-movie-etc-free-video.mp4"
+            type="video/mp4"
+          ></source>
         </video>
       </div>
     </main>
