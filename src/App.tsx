@@ -2,9 +2,10 @@ import { useState, ReactNode } from "react";
 
 import UsingPureReact from "./components/UsingPureReact";
 import UsingReactReducer from "./components/UsingReactReducer";
+import UsingXState from "./components/UsingXState";
+import UsingZustand from "./components/UsingZustand";
 
 import "./App.css";
-import UsingXState from "./components/UsingXState";
 
 function App() {
   const [type, setType] = useState<StateType>("pure-react");
@@ -19,6 +20,9 @@ function App() {
       break;
     case "x-state":
       stateComponent = <UsingXState />;
+      break;
+    case "zustand":
+      stateComponent = <UsingZustand />;
       break;
   }
 
@@ -43,6 +47,12 @@ function App() {
           onClick={() => setType("x-state")}
         >
           X State
+        </button>
+        <button
+          className={type === "zustand" ? "active" : ""}
+          onClick={() => setType("zustand")}
+        >
+          Zustand
         </button>
       </menu>
       <main>{stateComponent}</main>
