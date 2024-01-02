@@ -4,6 +4,7 @@ import UsingPureReact from "./components/UsingPureReact";
 import UsingReactReducer from "./components/UsingReactReducer";
 import UsingXState from "./components/UsingXState";
 import UsingZustand from "./components/UsingZustand";
+import UsingReduxToolkit from "./components/UsingReduxToolkit";
 
 import "./App.css";
 
@@ -23,6 +24,9 @@ function App() {
       break;
     case "zustand":
       stateComponent = <UsingZustand />;
+      break;
+    case "redux":
+      stateComponent = <UsingReduxToolkit />;
       break;
   }
 
@@ -53,6 +57,12 @@ function App() {
           onClick={() => setType("zustand")}
         >
           Zustand
+        </button>
+        <button
+          className={type === "redux" ? "active" : ""}
+          onClick={() => setType("redux")}
+        >
+          Redux Toolkit
         </button>
       </menu>
       <main>{stateComponent}</main>
